@@ -1,0 +1,11 @@
+/node_modules
+/dist
+/coverage
+/logs
+/.husky
+/.yarn
+.eslintrc.js
+.prettierrc.json
+jest.config.js
+package.json
+tsconfig.json

@@ -1,0 +1,8 @@
+/dist
+/coverage
+/.husky
+/.yarn
+.eslintrc.js
+.prettierrc.json
+package.json
+tsconfig.json
