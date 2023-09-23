@@ -8,7 +8,7 @@ import logger from './util/logger';
 async function start(): Promise<void> {
   // 배너 출력
   console.log(banner);
-  logger.info(`---- BATCH START ----`);
+  logger.info(`---- ${colors.blueBright('BATCH START')} ----`);
 
   // 환경 변수 설정
   configureEnvironments();
@@ -33,6 +33,14 @@ const configureEnvironments = (): void => {
   );
 };
 
+// 애플리케이션 시작
 start().then(() => {
-  logger.info('---- BATCH END ----');
+  logger.info(`---- ${colors.blueBright('BATCH END')} ----`);
+});
+
+// 처리되지 않은 오류 처리
+process.on('uncaughtException', (error) => {
+  logger.error(error);
+  logger.info(`---- ${colors.red('BATCH TERMINATE')} ----`);
+  process.exit(1);
 });
