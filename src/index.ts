@@ -22,7 +22,8 @@ const configureEnvironments = (): void => {
 
   // 설정된 환경(local, development, staging, production)에 따른 .env 파일에 지정된 값들을 재정의
   dotenv.config({
-    path: `.env.${process.env.NODE_ENV}`
+    path: `.env.${process.env.NODE_ENV}`,
+    override: true
   });
 
   logger.info(`${colors.gray('- Environment:')} ${colors.blueBright(process.env.NODE_ENV.toUpperCase())}`);
